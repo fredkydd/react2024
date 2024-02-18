@@ -2,28 +2,17 @@
 import './TabButton.css';
 import PropTypes from 'prop-types';
 
-export default function TabButton({ children, selectedButton, isSelected }) {
+export default function TabButton({ children, isSelected, ...props }) {
   return (
-    <>
-      <li>
-        <button
-          className={isSelected ? 'active' : undefined}
-          onClick={selectedButton}
-        >
-          {children}
-        </button>
-      </li>
-    </>
+    <li>
+      <button className={isSelected ? 'active' : undefined} {...props}>
+        {children}
+      </button>
+    </li>
   );
 }
 
 TabButton.propTypes = {
   children: PropTypes.node.isRequired,
-  selectedButton: PropTypes.func.isRequired,
   isSelected: PropTypes.bool.isRequired,
-};
-
-TabButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  selectedButton: PropTypes.func.isRequired,
 };

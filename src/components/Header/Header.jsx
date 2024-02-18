@@ -8,15 +8,13 @@ const captions = ['Crucial', 'Fundamental', 'Core'],
 
 export default function Header() {
   return (
-    <>
-      <header>
-        <img src={HeaderImg} alt="Stylized Atom" />
-        <h1>React Essentials</h1>
-        <p>
-          {randomCaption}React concepts you will need for almost any app you are
-          going to build!
-        </p>
-      </header>
-    </>
+    <header>
+      <img src={HeaderImg} alt="Stylized Atom" />
+      <h1>React Essentials</h1>
+      <p>
+        {randomCaption}React concepts you will need for almost any app you are
+        going to build!
+      </p>
+    </header>
   );
 }

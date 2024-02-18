@@ -1,6 +1,7 @@
 'use strict';
 import { useState } from 'react';
 import { FakeAPI } from '../../data.mjs';
+import Section from '../Section/Section';
 import TabButton from '../TabButton/TabButton';
 
 export default function Examples() {
@@ -9,44 +10,44 @@ export default function Examples() {
 
   return (
     <>
-      <section id="examples">
+      <Section id="examples">
         <menu>
           <TabButton
             isSelected={selected === 'components'}
-            selectedButton={() => setSelectedButton('components')}
+            onClick={() => setSelectedButton('components')}
           >
             Components
           </TabButton>
           <TabButton
             isSelected={selected === 'jsx'}
-            selectedButton={() => setSelectedButton('jsx')}
+            onClick={() => setSelectedButton('jsx')}
           >
             JSX
           </TabButton>
           <TabButton
             isSelected={selected === 'props'}
-            selectedButton={() => setSelectedButton('props')}
+            onClick={() => setSelectedButton('props')}
           >
             Props
           </TabButton>
           <TabButton
             isSelected={selected === 'state'}
-            selectedButton={() => setSelectedButton('state')}
+            onClick={() => setSelectedButton('state')}
           >
             State
           </TabButton>
         </menu>
-      </section>
+      </Section>
 
       {!selected && <p>Please, select one of the tabs.👆</p>}
       {selected && (
-        <section id="tab-content">
+        <Section id="tab-content">
           <h3>{FakeAPI[selected].title}</h3>
           <p>{FakeAPI[selected].description}</p>
           <pre>
             <code>{FakeAPI[selected].code}</code>
           </pre>
-        </section>
+        </Section>
       )}
     </>
   );
